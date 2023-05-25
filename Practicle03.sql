@@ -18,8 +18,6 @@ CREATE TABLE Parts(
     PRIMARY KEY (Pno)
 );
 
-
-
 CREATE TABLE Supply(
     Sno VARCHAR(10),
     Pno VARCHAR(10),
