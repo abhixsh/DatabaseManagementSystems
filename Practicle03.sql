@@ -21,8 +21,7 @@ CREATE TABLE Parts(
 CREATE TABLE Supply(
     Sno VARCHAR(10),
     Pno VARCHAR(10),
-    Quantity int,
-    FOREIGN KEY (Pno) REFERENCES Parts (Pno)
+    Quantity int
 );
 
 INSERT INTO Supplier(Sno, Sname, Status, City)
@@ -51,5 +50,37 @@ INSERT INTO Supplier(Sno, Sname, Status, City)
 
 ALTER TABLE Supplier ADD CONSTRAINT PK_Supplier PRIMARY KEY (Sno);
 
-ALTER TABLE 
+ALTER TABLE parts DROP PRIMARY KEY;
 
+
+
+SHOW TABLES;
+
+INSERT INTO supply(Sno, Pno, Quantity)
+    VALUES
+    ('S2','P7',300);
+
+ALTER TABLE supply
+ADD FOREIGN KEY (Pno) REFERENCES Parts(Pno); /* error*/
+
+
+
+ALTER TABLE supply
+RENAME TO supplyItems;
+
+ALTER TABLE Parts
+DROP COLUMN Pno;
+
+ALTER TABLE Parts
+ADD partID VARCHAR(20);
+
+INSERT INTO Parts (partID)
+    VALUES
+    ('P123'),
+    ('P124'),
+    ('P125'),
+    ('P126'),
+    ('P127'),
+    ('P128');
+ 
+ALTER TABLE Parts ADD CONSTRAINT PK_Parts PRIMARY KEY (partId); /* Error = Duplicate value */

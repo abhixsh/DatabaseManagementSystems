@@ -43,7 +43,7 @@ INSERT INTO Section(sectionID, courseNo, Semester, year, Instructor)
     VALUES
     ('85','MATH2410','First',2017,'King'),
     ('92','CS1310','First',2017,'Anderson'),
-    ('102','CS3320','Second',2018,'Knuth')
+    ('102','CS3320','Second',2018,'Knuth'),
     ('112','MATH2410','First',2017,'Chang'),
     ('119','CS1310','First',2017,'Anderson'),
     ('135','CS3380','Second',2018,'Stone');
@@ -52,7 +52,7 @@ INSERT INTO Grade_Report(StudentNo, sectionID, Grade)
     VALUES
     ('17',112,'B'),
     ('s17',119,'C'),
-    ('8',85,'A')
+    ('8',85,'A'),
     ('8',92,'A'),
     ('8',102,'B'),
     ('8',135,'A');
@@ -76,7 +76,7 @@ DELETE FROM Student WHERE name = 'Brown';
 
 SELECT * FROM Student;
 
-DELETE FROM Course WHERE name = 'Data Structuers';
+DELETE FROM Course WHERE courseName = 'Data Structures';
 
 SELECT * FROM Course;
 
